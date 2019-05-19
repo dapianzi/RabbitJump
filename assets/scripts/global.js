@@ -31,20 +31,11 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        this.manager = cc.director.getCollisionManager();
-        this.manager.enabled = true;
-        cc.systemEvent.setAccelerometerEnabled(true);
-        // cc.systemEvent.on(cc.SystemEvent.EventType.DEVICEMOTION, this.onDeviceMotion, this);
-    },
+    // onLoad () {},
 
     start () {
 
     },
 
-    onDeviceMotion(event) {
-        cc.log(event.acc.x + "   " + event.acc.y);
-        this.node.getChildByName('log').getComponent(cc.Label).string = event.acc.x + "   " + event.acc.y;
-    }
     // update (dt) {},
 });
