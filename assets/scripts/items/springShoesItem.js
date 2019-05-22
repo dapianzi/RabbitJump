@@ -31,14 +31,11 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        this.manager = cc.director.getCollisionManager();
-        this.manager.enabled = true;
-        
-    },
+    // onLoad () {},
 
     start () {
 
     },
+
     // update (dt) {},
 });

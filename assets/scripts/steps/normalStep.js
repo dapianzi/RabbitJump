@@ -31,14 +31,21 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        this.manager = cc.director.getCollisionManager();
-        this.manager.enabled = true;
-        
-    },
+    // onLoad () {},
 
     start () {
-
+        this.node.color = new cc.Color(255, 0, 0);
     },
+
     // update (dt) {},
+
+    onCollisionEnter(other, self) {
+        let pos = other.node.getPosition();
+        if (other.world.aabb.y > other.world.preAabb.y) {
+            // cc.log('jump up');
+        } else {
+            other.node.getComponent('rabbit')._v = other.node.getComponent('rabbit').v0;
+            // cc.log('jump down');
+        }
+    }
 });
